@@ -1,0 +1,26 @@
+Problem Link:- https://leetcode.com/problems/degree-of-an-array/
+
+
+class Solution {
+public:
+    int findShortestSubArray(vector<int>& nums) {
+        unordered_map<int,int>count;
+        int degree=0;int length=0;
+        unordered_map<int,int>firstseen;
+        for(int i=0;i<nums.size();i++){
+            if(!firstseen[nums[i]]){
+            firstseen[nums[i]]=i+1;
+        }
+            count[nums[i]]++;
+            if(count[nums[i]]>degree){
+                degree=count[nums[i]];
+                length=(i+1)-firstseen[nums[i]]+1;
+            }
+            else if (degree==count[nums[i]]){
+                length=min(length,(i+1)-firstseen[nums[i]]+1);
+            }
+        }
+
+        return length;
+}         
+};
