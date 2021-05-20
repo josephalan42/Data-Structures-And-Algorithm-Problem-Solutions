@@ -1,0 +1,29 @@
+Problem Link:-https://leetcode.com/problems/combination-sum/submissions/
+
+
+
+class Solution {
+void seeker(vector<int>&arr,int index,int target ,vector<vector<int>>&ans,vector<int>&v){
+if(index==arr.size()){
+    if(target==0){
+            ans.push_back(v);
+    }
+        return;
+}
+    if(arr[index]<=target){
+        v.push_back(arr[index]);
+        seeker(arr,index,target-arr[index],ans,v);
+        v.pop_back();
+    }
+    seeker(arr,index+1,target,ans,v);
+    }
+    
+public:
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        vector<vector<int>>ans;
+        vector<int>v;
+        seeker(candidates,0,target,ans,v);
+        return ans;
+    }     
+        
+};
