@@ -1,0 +1,27 @@
+Problem Link:-https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/submissions/
+
+
+
+class Solution {
+public:
+    vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+        int maxx=0;
+        int sum=0;
+        vector<bool>res;
+        for(int i=0;i<candies.size();i++){
+            maxx=max(maxx,candies[i]);
+        }
+        for(int j=0;j<candies.size();j++){
+            
+           sum=candies[j]+extraCandies;
+           if(sum>=maxx){
+               res.push_back(true);
+           } 
+            else{
+                res.push_back(false);
+            }
+            
+        }    
+    return res;
+    }
+};
