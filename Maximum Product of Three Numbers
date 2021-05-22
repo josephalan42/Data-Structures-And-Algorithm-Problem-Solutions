@@ -6,14 +6,13 @@ class Solution {
 public:
     int maximumProduct(vector<int>& nums) {
         
-        int max_pro,max_pro1,max_pro2,max_pro3;
+        int max_pro,max_pro2,max_pro3;
         int i=nums.size()-1;
         sort(nums.begin(),nums.end());
-        max_pro1=nums[0]*nums[1]*nums[2];
         max_pro2=nums[i]*nums[i-1]*nums[i-2];
         max_pro3=nums[0]*nums[1]*nums[i];
-        max_pro=max(max_pro1,max_pro2);
-        max_pro=max(max_pro,max_pro3);
+        max_pro=max(max_pro2,max_pro3);
         return max_pro;
     }
 };
+    
