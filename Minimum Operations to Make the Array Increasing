@@ -1,0 +1,23 @@
+Problem Link:-https://leetcode.com/problems/minimum-operations-to-make-the-array-increasing/submissions/
+
+
+
+class Solution {
+public:
+    int minOperations(vector<int>& nums) {
+        int count=0;
+    
+        
+        for(int i=1;i<=nums.size()-1;i++)
+            {
+            
+            if(nums[i]<=nums[i-1]){
+                    int diff=nums[i-1]-nums[i]+1;
+                    count+=diff;
+                    nums[i]+=diff;
+                }
+            }
+        
+        return count;
+    }
+};
