@@ -1,0 +1,18 @@
+Probelm Link:-https://leetcode.com/problems/find-the-duplicate-number/submissions/
+
+
+
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        int dup;
+        int j=nums.size()-1;
+        for(int i=0;i<j;i++){
+            if(nums[i]==nums[i+1]){
+                dup=nums[i];
+            }
+        }
+    return dup;
+    }
+};
