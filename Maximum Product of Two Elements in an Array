@@ -1,0 +1,14 @@
+Problemm Link:-https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/submissions/
+
+
+
+class Solution {
+public:
+    int maxProduct(vector<int>& nums) {
+        int max_pro;
+        int i=nums.size();
+        sort(nums.begin(),nums.end());
+        max_pro=(nums[i-1]-1)*(nums[i-2]-1);
+        return max_pro;
+    }
+};
