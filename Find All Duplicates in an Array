@@ -1,0 +1,20 @@
+Problem Link:-https://leetcode.com/problems/find-all-duplicates-in-an-array/submissions/
+
+
+class Solution {
+public:
+    vector<int> findDuplicates(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        vector<int>rep;
+        int k=nums.size()-1;
+        int i=0;
+        for(int j=i+1;j<=k;j++){
+                if(nums[i]==nums[j]){
+                    rep.push_back(nums[i]);
+                }
+            i++;
+            }
+        
+    return rep;
+    }
+};
