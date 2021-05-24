@@ -1,0 +1,45 @@
+Problem Link:-https://leetcode.com/problems/number-of-students-doing-homework-at-a-given-time/submissions/
+
+
+
+class Solution {
+public:
+    int busyStudent(vector<int>& startTime, vector<int>& endTime, int queryTime) {
+        int j=0;
+        int i=0;
+        if(startTime.size()==1){
+            if(startTime[0]==queryTime){
+                return 1;
+            }
+            else{
+                while(endTime[i]>startTime[i]){
+                endTime[i]=endTime[i]-1;
+                if(endTime[i]==queryTime){
+                    j++;
+                }
+            }
+                
+            
+        }}
+        
+        for(i;i<endTime.size();i++){
+            if(endTime[i]==queryTime||startTime[i]==queryTime)
+            {
+                j++;
+            }
+            else{
+            while(endTime[i]>startTime[i]){
+                endTime[i]=endTime[i]-1;
+                if(endTime[i]==queryTime){
+                    j++;
+                }
+                
+            }
+           
+        }
+            
+        }
+    
+      return j;
+    } 
+};
