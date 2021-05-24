@@ -1,0 +1,15 @@
+Problem Link:-https://leetcode.com/problems/squares-of-a-sorted-array/submissions/
+
+
+
+class Solution {
+public:
+    vector<int> sortedSquares(vector<int>& nums) {
+        
+        for(int I=0;I<nums.size() ;I++) {
+            nums[I]=nums[I]*nums[I];
+        }
+    sort(nums.begin(),nums.end());
+    return nums;
+    }
+};
