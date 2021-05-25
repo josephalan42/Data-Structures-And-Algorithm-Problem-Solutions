@@ -1,0 +1,22 @@
+Problem Link:-https://leetcode.com/problems/maximum-ice-cream-bars/submissions/
+
+
+class Solution {
+public:
+   
+      int maxIceCream(vector<int>& costs, int coins) {
+        int count=0;
+        sort(costs.begin(),costs.end());
+        for(int i=0;i<costs.size();i++)
+        {
+            if(costs[i]<=coins)
+            {
+                coins-=costs[i];
+                count++;
+            }
+            if(coins<=0)
+                break;
+        }
+        return count;  
+      }
+};
