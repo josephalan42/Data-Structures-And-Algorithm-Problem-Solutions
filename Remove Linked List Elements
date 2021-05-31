@@ -15,8 +15,7 @@ public:
                 else prev->next=cur->next;
       
             }
-            else          
-                prev=cur;
+            else{prev=cur;}
                 cur=cur->next;
                     
         }
