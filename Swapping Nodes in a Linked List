@@ -3,36 +3,31 @@ Problem Link:-https://leetcode.com/problems/swapping-nodes-in-a-linked-list/subm
 
 class Solution {
 public:
-    ListNode* swapNodes(ListNode* head, int k) 
-    {
-        ListNode* ptr1 = head;
-        ListNode* ptr2 = head;
-        ListNode* temp = head;
-        int node1=0,node2=0;
-        int n = 1;
-        while(ptr1)
-        {
-            ptr1 = ptr1->next;
+    ListNode* swapNodes(ListNode* head, int k) {
+        ListNode *p1=head;
+        ListNode *p2=head;
+        ListNode *main=head;
+        int n1=0,n2=0;
+        
+        int n=1;
+        while(p1!=NULL){
             n++;
+            p1=p1->next;
         }
-        for(int i =1;i<n;i++)
-        {
-            if(i==k)
-                node1 = ptr2->val;
-            if(i==n-k)
-                node2 = ptr2->val;
-            ptr2 = ptr2->next;
+        
+        for(int i=1;i<n;i++){
+            if(i==k)n1=p2->val;
+            if(i==n-k) n2=p2->val;
+            p2=p2->next;
         }
-        int j = 1;
-        while(temp)
-        {
-            if(j == k)
-                temp->val = node2;
-            if(j == n-k)
-                temp->val = node1;
-            temp = temp->next;
-            j++;
+        int s=1;
+        while(main!=NULL){
+            if(s==k)main->val=n2;
+            if(s==n-k)main->val=n1;      
+        main=main->next;
+        s++;
         }
-        return head;
+    
+    return head;
     }
 };
