@@ -1,0 +1,45 @@
+Problem Link:-https://leetcode.com/problems/remove-nth-node-from-end-of-list/submissions/
+
+
+
+class Solution {
+public:
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        if(!head->next)      
+            return nullptr;
+        
+        if(!head->next->next)       
+        {
+            if(n==1)
+            {
+                head->next = nullptr;
+                return head;
+            }
+            else
+                return head->next;
+        }
+        ListNode *p1=head;
+        ListNode *p2=head;
+        int s=0;
+	    int count=0;
+        while(p1){
+            p1=p1->next;
+            count++;
+        }
+       if(n==count)
+            return head->next;
+        
+        while(p2){
+            if(s==count-n-1){
+                if(p2->next->next != nullptr)p2->next = p2->next->next;      
+                else p2->next = nullptr;            
+            
+            }
+        s++;
+        p2=p2->next;
+        }
+        
+            
+    return head;
+    }
+};
