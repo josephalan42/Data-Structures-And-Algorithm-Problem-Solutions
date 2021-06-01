@@ -1,0 +1,25 @@
+Problem Link:-https://leetcode.com/problems/middle-of-the-linked-list/
+
+
+
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        int l=0;
+        ListNode *tail;
+        while(tail!=NULL){
+            l++;
+            tail=tail->next;
+        }
+        int x;
+        x=l/2+1;
+        int j=1;
+        while(j<x)
+        {
+            j++;
+            head=head->next;
+        }
+        return head;
+    }
+};
+    
