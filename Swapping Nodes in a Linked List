@@ -1,0 +1,38 @@
+Problem Link:-https://leetcode.com/problems/swapping-nodes-in-a-linked-list/submissions/
+
+
+class Solution {
+public:
+    ListNode* swapNodes(ListNode* head, int k) 
+    {
+        ListNode* ptr1 = head;
+        ListNode* ptr2 = head;
+        ListNode* temp = head;
+        int node1=0,node2=0;
+        int n = 1;
+        while(ptr1)
+        {
+            ptr1 = ptr1->next;
+            n++;
+        }
+        for(int i =1;i<n;i++)
+        {
+            if(i==k)
+                node1 = ptr2->val;
+            if(i==n-k)
+                node2 = ptr2->val;
+            ptr2 = ptr2->next;
+        }
+        int j = 1;
+        while(temp)
+        {
+            if(j == k)
+                temp->val = node2;
+            if(j == n-k)
+                temp->val = node1;
+            temp = temp->next;
+            j++;
+        }
+        return head;
+    }
+};
