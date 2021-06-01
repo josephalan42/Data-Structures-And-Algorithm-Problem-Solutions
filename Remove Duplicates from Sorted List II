@@ -1,0 +1,22 @@
+Problem Link:-https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/submissions/
+
+
+class Solution {
+public:
+    ListNode* deleteDuplicates(ListNode* head) {
+        if(!head || !head->next){
+            return head;
+        }
+        ListNode *curr=head->next;
+        if(head->val == curr->val){
+        while(curr && head->val==curr->val){curr=curr->next;}
+        return deleteDuplicates(curr);
+        }
+        else{
+            head->next=deleteDuplicates(curr);
+            return head;
+        }
+    
+    
+    }
+};
