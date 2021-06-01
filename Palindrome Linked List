@@ -1,0 +1,25 @@
+Problem Link:-https://leetcode.com/problems/palindrome-linked-list/submissions/
+
+
+class Solution {
+public:
+    bool isPalindrome(ListNode* head) {
+        vector<int>res;
+        while(head!=NULL){
+            res.push_back(head->val);
+            head=head->next;
+        }
+        int r=res.size()-1;
+        int l=0;
+        while(l<=r){
+            if(res[l]==res[r]){
+                l++;
+                r--;
+            }
+            else{
+                return false;
+            }
+        }
+    return true;
+    }
+};
