@@ -1,0 +1,18 @@
+Problem Link:-
+
+
+
+class Solution {
+public:
+    vector<int> sumZero(int n) {
+        vector<int>res;
+        int ans=0;
+        for(int i=1;i<n;i++){
+            res.push_back(i);
+            ans=ans+i;
+        }
+     res.push_back(-ans);
+   return res; 
+    
+    }
+};
