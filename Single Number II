@@ -1,0 +1,19 @@
+Problem Link:-https://leetcode.com/problems/single-number-ii/
+
+
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int ele;
+        unordered_map<int,int>mpp;
+        for(int i=0;i<nums.size();i++){
+            ++mpp[nums[i]];
+        }
+        for(int i=0;i<nums.size();i++){
+            if(mpp[nums[i]]==1){
+                ele=nums[i];
+            }
+        }
+    return ele;
+    }
+};
