@@ -1,0 +1,21 @@
+Probelm Link:-https://leetcode.com/problems/single-number-iii/submissions/
+
+
+
+class Solution {
+public:
+    vector<int> singleNumber(vector<int>& nums) {
+        unordered_map<int,int>mpp;
+        vector<int>res;
+        for(int i=0;i<nums.size();i++){
+            ++mpp[nums[i]];
+        }
+        for(int i=0;i<nums.size();i++){
+            if(mpp[nums[i]]==1){
+                res.push_back(nums[i]);
+            }
+        }
+    
+    return res;
+    }
+};
