@@ -1,0 +1,16 @@
+Problem Link:-https://leetcode.com/problems/check-if-all-1s-are-at-least-length-k-places-away/submissions/
+
+
+
+class Solution {
+public:
+    bool kLengthApart(vector<int>& nums, int k) {
+        int zeros = k;
+        for (int i : nums) {
+        if (i == 0) zeros++;
+        else if (zeros >= k) zeros = 0;
+        else return false;
+        }
+return true;
+} 
+};
