@@ -1,0 +1,29 @@
+Problem Link:-https://leetcode.com/problems/check-if-n-and-its-double-exist/submissions/
+
+
+class Solution {
+public:
+    bool checkIfExist(vector<int>& arr) {
+        vector<int>res;
+        int count=0;
+        for(int i=0;i<arr.size();i++){
+            res.push_back(arr[i]*2);
+            if(arr[i]==0){
+                count++;
+            }
+        }
+        if(count>1){
+            return true;
+        }
+        
+        for(int i=0;i<res.size();i++){
+            for(int j=0;j<res.size();j++){
+                
+                if(res[i]==arr[j] && res[i]!=0){
+                    return true;
+                }
+            }
+        }
+    return false;
+    }
+};
