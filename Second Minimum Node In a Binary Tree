@@ -1,0 +1,30 @@
+Problem Link:-https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/
+
+
+
+class Solution {
+public:
+    vector<int>res; 
+    int findSecondMinimumValue(TreeNode* root) {
+        if(root==NULL){
+            return -1;
+        }
+        
+        
+            res.push_back(root->val);
+         findSecondMinimumValue(root->left);
+         findSecondMinimumValue(root->right);
+    
+        sort(res.begin(),res.end());
+      int val = -1;
+        
+        for(int i = 1; i < res.size(); i++) {
+            if(res[i] != res[i-1]) {
+             val = res[i];
+             break; 
+            }
+        }
+        return val;
+      
+    }
+};
