@@ -1,0 +1,26 @@
+Problem Link:-https://leetcode.com/problems/longer-contiguous-segments-of-ones-than-zeros/submissions/
+
+
+
+class Solution {
+public:
+    bool checkZeroOnes(string s) {
+        int countOne=0, countZero=0, max1=0, max0=0;
+        for (int i=0;i<s.size() ;i++)
+        {
+            if (s[i]=='1')
+            {
+                countOne++;
+                countZero=0;
+            }
+            else if(s[i]=='0') 
+            {
+                countZero++;
+                countOne=0;
+            }
+            max1=max(max1, countOne) ;
+            max0=max(max0, countZero) ;
+        }
+        return max1>max0;
+    }
+};
