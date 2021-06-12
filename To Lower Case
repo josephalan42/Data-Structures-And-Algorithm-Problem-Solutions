@@ -1,0 +1,17 @@
+Problem Link:-https://leetcode.com/problems/to-lower-case/submissions/
+
+
+
+class Solution {
+public:
+string toLowerCase(string s) {
+    int i = 0;
+        while(i != s.size()){
+            if(s[i] < 91 && s[i] > 64){
+                    s[i] += 32;
+                }
+                i++;
+        }
+    return s;
+    }
+};
