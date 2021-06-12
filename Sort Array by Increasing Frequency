@@ -1,0 +1,16 @@
+Problem Link:-https://leetcode.com/problems/sort-array-by-increasing-frequency/submissions/
+
+
+
+class Solution {
+public:
+    vector<int> frequencySort(vector<int>& nums) {
+        unordered_map<int, int> numFreq;
+        for(auto num:nums) numFreq[num]++;
+
+        sort(nums.begin(), nums.end(), [&](int &a, int &b){
+            return (numFreq[a] == numFreq[b]) ? a>b : numFreq[a]<numFreq[b];});
+			
+        return nums;
+    }
+};
