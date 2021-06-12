@@ -1,0 +1,24 @@
+Problem Link:-https://leetcode.com/problems/consecutive-characters/submissions/
+
+
+
+class Solution {
+public:
+int maxPower(string s) {
+    int res=0;
+        for(int i=0;i<s.size();i++){
+            int j=i;
+            int count=0;
+        while(s[i]==s[j]){
+
+            count++;
+            j++;
+        }
+            if(count>res){
+                 res=count;
+        }
+        
+    }
+    return res;
+    }
+};
