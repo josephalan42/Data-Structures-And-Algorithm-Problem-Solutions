@@ -1,0 +1,20 @@
+Problem Link:-https://leetcode.com/problems/water-bottles/submissions/
+
+
+
+class Solution {
+public:
+    int numWaterBottles(int numBottles, int numExchange) {
+        
+        int res = numBottles;
+        
+        while(numBottles >= numExchange) {
+            
+            int exchanged = numBottles / numExchange;
+            res += exchanged;
+            numBottles -= numExchange * exchanged ;
+            numBottles += exchanged;
+        }
+        return res;
+    }
+};
