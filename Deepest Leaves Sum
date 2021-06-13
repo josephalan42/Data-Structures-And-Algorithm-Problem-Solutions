@@ -1,0 +1,28 @@
+Problem Link:-https://leetcode.com/problems/deepest-leaves-sum/submissions/
+
+
+
+class Solution {
+public:
+    int height=0;
+    int sum=INT_MIN;
+    void traverse(TreeNode* root, int h){
+        if(!root) return;
+        traverse(root->left,h+1);
+        traverse(root->right,h+1);
+        if(height<h){
+            height = h;
+            sum=root->val;
+        }
+        else if(height==h){
+            sum+=root->val;
+        }
+        
+    }
+    int deepestLeavesSum(TreeNode* root) {
+        height=0;
+        sum=0;
+        traverse(root, 0);
+        return sum;
+    }
+};
