@@ -1,0 +1,16 @@
+Problem Link:-https://practice.geeksforgeeks.org/problems/index-of-an-extra-element/1/?company[]=Zoho&company[]=Zoho&page=1&query=company[]Zohopage1company[]Zoho
+
+
+
+class Solution{
+  public:
+    int findExtra(int a[], int b[], int n) {
+        for(int i=0;i<n;i++){
+            if(a[i]!=b[i]){
+                return i;
+            }
+        }
+    
+        return 0;
+    }
+};
