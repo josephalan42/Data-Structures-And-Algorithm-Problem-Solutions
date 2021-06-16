@@ -1,0 +1,17 @@
+Problem Link:-https://leetcode.com/problems/add-digits/submissions/
+
+
+
+class Solution {
+public:
+    int addDigits(int num) {
+        if(num/10==0)return num;
+        int count =0;
+        while(num>0){
+            count+=num%10;
+            num/=10;
+        }
+        if(count/10==0)return count;
+        return addDigits(count);
+    }
+};
