@@ -1,0 +1,26 @@
+Problem Link:-https://leetcode.com/problems/invert-binary-tree/submissions/
+
+
+
+class Solution {
+public:
+    void helper(TreeNode *root){
+
+        if(root == NULL){
+            return ;
+        }
+        helper(root->right);
+        helper(root->left);
+        swap(root->left,root->right);
+
+        
+    }
+    TreeNode* invertTree(TreeNode* root) {
+        if(root == NULL){
+            return NULL;
+        }
+       
+        helper(root);
+        return root;
+    }
+};
