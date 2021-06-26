@@ -1,0 +1,22 @@
+Problem Link:-https://leetcode.com/problems/palindrome-number/
+
+
+
+
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        string X=to_string(x);
+        int l=0;
+        int r=X.size()-1;
+        while(l<=r){
+            if(X[l]!=X[r]){
+                return false;
+            }
+        l++;
+        r--;
+        
+        }
+    return true;
+    }
+};
