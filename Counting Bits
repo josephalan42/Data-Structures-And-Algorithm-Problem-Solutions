@@ -1,0 +1,23 @@
+Problem Link:-https://leetcode.com/problems/counting-bits/submissions/
+
+
+
+class Solution {
+public:
+    vector<int> countBits(int num) {
+        vector<int> one_count; 
+        one_count.push_back(0);
+        int ans;
+        for (auto i = 1; i <= num; i++) {
+            if(i%2==0) 
+            {
+                ans = one_count[i>>1];
+            }
+            else {
+                ans = one_count[i>>1] + 1;
+            }
+            one_count.push_back(ans);
+        }        
+        return one_count;
+    }
+};
