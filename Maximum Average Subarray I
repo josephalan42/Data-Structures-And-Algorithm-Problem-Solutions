@@ -14,7 +14,7 @@ public:
             if(r>=k-1){
                 if(sum/k>avg)
                     avg=sum/k;
-                    sum -= nums[l];
+                    sum=sum-nums[l];
                     l++;
             }      
             
