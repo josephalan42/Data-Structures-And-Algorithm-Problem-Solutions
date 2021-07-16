@@ -5,18 +5,20 @@ Problem Link:-https://leetcode.com/problems/maximum-average-subarray-i/submissio
 class Solution {
 public:
     double findMaxAverage(vector<int>& nums, int k) {
-        int n = nums.size();
-        int l = 0;
+        int l=0;
+        int n=nums.size();
+        double avg=INT_MIN;
         double sum=0;
-        double avg= INT_MIN;
-        for(int r=0; r<n; r++){
+        for(int r=0;r<n;r++){
             sum+=nums[r];
-            if(r>= k-1){
-                if(sum/k > avg) avg = sum/k;
-                sum -= nums[l];
-                l++;
-            }
+            if(r>=k-1){
+                if(sum/k>avg)
+                    avg=sum/k;
+                    sum -= nums[l];
+                    l++;
+            }      
+            
         }
-        return avg;
+    return avg;
     }
 };
