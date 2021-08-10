@@ -1,0 +1,16 @@
+Problem Link:-https://www.hackerrank.com/challenges/birthday-cake-candles/problem?h_r=next-challenge&h_v=zen
+
+
+int birthdayCakeCandles(vector<int> candles) {
+    int maxx=0;
+    int count=0;
+    for(int i=0;i<candles.size();i++){
+        maxx=max(candles[i],maxx);
+    }
+    for(int j=0;j<candles.size();j++){
+        if(maxx==candles[j]){
+            count++;
+        }
+    }
+    return count;
+}
