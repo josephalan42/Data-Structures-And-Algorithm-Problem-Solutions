@@ -1,0 +1,25 @@
+Problem Link:-https://www.hackerrank.com/challenges/insert-a-node-at-the-tail-of-a-linked-list/problem
+
+
+
+SinglyLinkedListNode* insertNodeAtTail(SinglyLinkedListNode* head, int num) {
+	
+    SinglyLinkedListNode* New= new SinglyLinkedListNode(num);
+    New->data=num;
+    New->next=NULL;
+
+    
+    if(head==NULL){
+        head=New;
+
+    }
+    else{
+            SinglyLinkedListNode* current=head; 
+            while (current->next!=NULL) {
+                current=current->next;
+            }
+        current->next=New;
+        
+    }
+    return head;
+}
