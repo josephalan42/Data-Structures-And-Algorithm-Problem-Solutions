@@ -1,0 +1,16 @@
+Problem Link:-https://www.hackerrank.com/challenges/mini-max-sum/problem
+
+
+
+void miniMaxSum(vector<int> arr) {
+    long min=0;
+    long max=0;
+    sort(arr.begin(),arr.end());
+    for(int i=0;i<arr.size()-1;i++){
+        min+=arr[i];
+    }
+    for(int j=1;j<arr.size();j++){
+        max+=arr[j];
+    }
+    std::cout<<min<<" "<<max;
+}
