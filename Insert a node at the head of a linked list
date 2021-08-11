@@ -1,0 +1,12 @@
+Problem Link:-https://www.hackerrank.com/challenges/insert-a-node-at-the-head-of-a-linked-list/problem
+
+
+
+SinglyLinkedListNode* insertNodeAtHead(SinglyLinkedListNode* llist, int val) {
+	
+    SinglyLinkedListNode* New=new SinglyLinkedListNode(val);
+    New->data=val;
+    New->next=llist;
+    return New;
+    
+}
