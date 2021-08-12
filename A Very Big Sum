@@ -1,0 +1,11 @@
+Problem Link:-https://www.hackerrank.com/challenges/a-very-big-sum/problem
+
+
+
+long aVeryBigSum(vector<long> ar) {
+    long A=0;
+    for(int i=0;i<ar.size();i++){
+        A+=ar[i];
+    }
+    return A;
+}
