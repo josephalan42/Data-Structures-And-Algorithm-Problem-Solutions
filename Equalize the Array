@@ -1,0 +1,27 @@
+Problem Link:-https://www.hackerrank.com/challenges/equality-in-a-array/problem
+
+
+
+int equalizeArray(vector<int> arr) {
+    int New=INT_MIN;
+    int maxx=INT_MIN;
+    int target=0;
+    int count=0;
+    unordered_map<int,int>mpp;
+    for(int i=0;i<arr.size();i++){
+        ++mpp[arr[i]];
+    }
+    for(int j=0;j<arr.size();j++){
+        maxx=max(mpp[arr[j]],maxx);
+        if(maxx>New){
+            New=maxx;
+            target=arr[j];
+        }
+    }
+    for(int k=0;k<arr.size();k++){
+        if(arr[k]!=target){
+            count++;
+        }
+    }
+    return count;
+}
