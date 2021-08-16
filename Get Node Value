@@ -1,0 +1,17 @@
+Problem Link:-https://www.hackerrank.com/challenges/get-the-value-of-the-node-at-a-specific-position-from-the-tail/problem
+
+
+
+int getNode(SinglyLinkedListNode* head, int positionFromTail) {
+    int i=0;
+    SinglyLinkedListNode* current=head;
+    SinglyLinkedListNode* res=head;
+    while(current!=NULL){
+    current=current->next;
+    if(i++>positionFromTail){
+        res=res->next;
+    }
+    }
+    return res->data;
+
+}
