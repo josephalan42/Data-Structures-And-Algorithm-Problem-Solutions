@@ -1,0 +1,16 @@
+Problem Link:-https://www.hackerrank.com/challenges/find-digits/problem
+
+
+
+int findDigits(int n) {
+    int x=n;
+    int sum=0;
+    while(x>0){
+        if(x%10!=0 && n%(x%10)==0){
+            sum++;   
+        }
+      
+        x=x/10;
+    }
+    return sum;
+}
