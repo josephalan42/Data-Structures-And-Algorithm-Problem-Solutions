@@ -1,0 +1,54 @@
+
+Problem Link:-https://practice.geeksforgeeks.org/problems/check-for-subsequence4930/1
+
+
+class Solution{
+    public:
+    bool isSubSequence(string A, string B) 
+    {
+         int i=0;
+       int j=0;
+       int count=0;
+       while(j<B.length()&& i<A.length()){
+           if(A[i]==B[j]){
+               i++;
+               j++;
+               count=count+1;
+           }
+       
+           else{
+               j++;
+           }
+       }
+    
+        
+        
+        if(count==A.length()){
+            return true;
+        }
+
+            return false;
+    
+    }
+};
+
+//{ Driver Code Starts.
+int main() 
+{ 
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        string A,B;
+        cin>>A;
+        cin>>B;  
+        Solution ob;
+        if(ob.isSubSequence(A,B))
+            cout<<"1"<<endl;
+        else
+            cout<<"0"<<endl;
+    }
+    return 0; 
+} 
+
+// } Driver Code Ends
